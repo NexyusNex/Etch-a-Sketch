@@ -22,7 +22,7 @@ function randomBgColor(){
 function createGrid(){
         
         container.setAttribute('style',`grid-template-columns: repeat(${size},1fr); grid-template-rows: repeat(${size},1fr);`);
-
+        percent=0;
         for(var i = 0; i<size; i++){
             for(var j = 0; j<size; j++){
                 const div = document.createElement('div');
