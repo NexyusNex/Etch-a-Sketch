@@ -1,4 +1,4 @@
-let size = 2;
+let size = 50;
 const container = document.querySelector(".container");
 function removeGrid(){
         const divs = document.querySelectorAll('.square');
@@ -7,11 +7,16 @@ function removeGrid(){
         })
 }
 let rgbColor;
+let percent = 0;
 function randomBgColor(){
     let x = Math.floor(Math.random()*256);
     let y = Math.floor(Math.random()*256);
     let z = Math.floor(Math.random()*256);
+    x=(x-((x/100)*percent));
+    y=(y-((y/100)*percent));
+    z=(z-((z/100)*percent));
     rgbColor = "rgb("+ x +","+ y +","+ z +")";
+    percent+=10;
 }
 
 function createGrid(){
