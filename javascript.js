@@ -1,4 +1,5 @@
 let size = 50;
+let click = false;
 const container = document.querySelector(".container");
 function removeGrid(){
         const divs = document.querySelectorAll('.square');
@@ -32,14 +33,16 @@ function createGrid(){
         }
         const divs = document.querySelectorAll('.square');
         divs.forEach(div =>{
-        div.addEventListener('mouseover',function(){
-            randomBgColor();
-            div.style.background=rgbColor;
-        })
+        div.addEventListener('mouseover',colorSquare);
         }     
 )
 }
-
+function colorSquare(){
+    if(click){
+        randomBgColor();
+       this.style.background=rgbColor;
+    }
+}
 createGrid();
 function start(){
     do{
@@ -48,3 +51,7 @@ function start(){
     removeGrid();
     createGrid();
 }
+
+document.querySelector("body").addEventListener('click',function(){
+    click = !click;
+});
