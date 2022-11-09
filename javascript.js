@@ -52,6 +52,11 @@ function start(){
     createGrid();
 }
 
-container.addEventListener('click',function(){
-    click = !click;
+container.addEventListener('mousedown',function(e){
+    e.preventDefault();
+    click = true;
+});
+container.addEventListener('mouseup',function(e){
+    e.preventDefault();
+    click = false;
 });
