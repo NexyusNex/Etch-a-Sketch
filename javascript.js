@@ -52,6 +52,6 @@ function start(){
     createGrid();
 }
 
-document.querySelector("body").addEventListener('click',function(){
+container.addEventListener('click',function(){
     click = !click;
 });
