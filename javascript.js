@@ -6,6 +6,14 @@ function removeGrid(){
             div.remove();
         })
 }
+let rgbColor;
+function randomBgColor(){
+    let x = Math.floor(Math.random()*256);
+    let y = Math.floor(Math.random()*256);
+    let z = Math.floor(Math.random()*256);
+    rgbColor = "rgb("+ x +","+ y +","+ z +")";
+}
+
 function createGrid(){
         
         container.setAttribute('style',`grid-template-columns: repeat(${size},1fr); grid-template-rows: repeat(${size},1fr);`);
@@ -20,7 +28,8 @@ function createGrid(){
         const divs = document.querySelectorAll('.square');
         divs.forEach(div =>{
         div.addEventListener('mouseover',function(){
-            div.style.backgroundColor='black';
+            randomBgColor();
+            div.style.background=rgbColor;
         })
         }     
 )
